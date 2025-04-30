@@ -17,7 +17,7 @@
             {% if user.is_authenticated %}
             <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"  onclick="loadCart()"><i class="bi bi-handbag"></i></a>
             {% else %}
-            <a href="#" ><i class="bi bi-handbag"></i></a>
+            <a href="#" style="color: #000;" ><i class="bi bi-handbag"></i></a>
             {% endif %}
             <div class="dropdown">
                 {% if user.is_authenticated %}
@@ -40,10 +40,49 @@
 
 <!-- Navigation Links -->
 <div style="padding:10px; display:flex; gap:50px; flex-wrap:wrap; justify-content:flex-start; background:white; font-size:22px; font-weight:500; border-bottom:1px solid #eee; padding-left: 120px;">
-    <a href="#" style="text-decoration:none; color:#333;">SHOP ALL <i class="bi bi-chevron-down"></i></a>
-    <a href="#" style="text-decoration:none; color:#333;">SKIN CONCERN <i class="bi bi-chevron-down"></i></a>
-    <a href="#" style="text-decoration:none; color:#333;">INGREDIENTS <i class="bi bi-chevron-down"></i></a>
-    <a href="#" style="text-decoration:none; color:#333;">SKIN TYPE <i class="bi bi-chevron-down"></i></a>
+    <a href="#" style="text-decoration:none; color:#333;">SHOP ALL</a>
+    <div style="position:relative;">
+        <a href="#" class="menu-link">SKIN CONCERN <i class="bi bi-chevron-down"></i></a>
+        <div style="display:none; position:absolute; top:100%; left:0; background:white; box-shadow:0 4px 8px rgba(0,0,0,0.1); padding:10px; font-size:18px; z-index:100;" onmouseover="this.style.display='block'" onmouseout="this.style.display='none'">
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Dullness</a>
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Dryness</a>
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Dark spots</a>
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Pigmentation</a>
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Acne</a>
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Damaged skin Barrier</a>
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Excess Oil</a>
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Ageing</a>
+            <a href="#" style="text-decoration: none;"><div style="background-color: hotpink;margin-top: 7px;margin-left: 12px;margin-right: 20px;text-align: center;color: #000;" >View All</div></a>
+        </div>
+    </div>
+
+    <div style="position:relative;">
+        <a href="#" class="menu-link">INGREDIENTS<i class="bi bi-chevron-down"></i></a>
+        <div style="display:none; position:absolute; top:100%; left:0; background:white; box-shadow:0 4px 8px rgba(0,0,0,0.1); padding:10px; font-size:18px; z-index:100;" onmouseover="this.style.display='block'" onmouseout="this.style.display='none'">
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Vitamin C</a>
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Hyaluronic + Ceramides</a>
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Niacinamide + CICA</a>
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Watermelon + AHA</a>
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Strawberry</a>
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Salicylic Acid</a>
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Pomeggranate + Retinol</a>
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Mango</a>
+            <a href="#" style="text-decoration: none;"><div style="background-color: hotpink;margin-top: 7px;margin-left: 12px;margin-right: 20px;text-align: center;color: #000;" >View All</div></a>
+        </div>
+    </div>
+
+    <div style="position:relative;">
+        <a href="#" class="menu-link">SKIN TYPES <i class="bi bi-chevron-down"></i></a>
+        <div style="display:none; position:absolute; top:100%; left:0; background:white; box-shadow:0 4px 8px rgba(0,0,0,0.1); padding:10px; font-size:18px; z-index:100;" onmouseover="this.style.display='block'" onmouseout="this.style.display='none'">
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Oily</a>
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Dry</a>
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Combination</a>
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Sensitive</a>
+            <a href="#" style="display:block; color:#333; text-decoration:none; padding:5px 0;">Normal</a>
+            <a href="#" style="text-decoration: none;"><div style="background-color: hotpink;margin-top: 7px;margin-left: 12px;margin-right: 20px;text-align: center;color: #000;" >View All</div></a>
+        </div>
+    </div>
+
     <a href="{% url 'bestsellers' %}" style="text-decoration:none; color:#333;">BEST SELLERS</a>
     <a href="{% url 'newarrivals' %}" style="text-decoration:none; color:#333;">NEW ARRIVALS</a>
     <a href="#" style="text-decoration:none; color:#333;">BLOGS</a>
@@ -151,3 +190,26 @@
         registerModal.show();
     {% endif %}
 </script>
+
+<style>
+    .menu-link {
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s;
+    }
+  
+    .menu-link:hover {
+      color: hotpink;
+    }
+</style>
+  
+<script>
+    // Basic hover for dropdowns (without needing external CSS)
+    const dropdowns = document.querySelectorAll("div[style*='position:relative']");
+    dropdowns.forEach(drop => {
+        const menu = drop.querySelector("div[style*='position:absolute']");
+        drop.addEventListener("mouseover", () => menu.style.display = "block");
+        drop.addEventListener("mouseout", () => menu.style.display = "none");
+    });
+</script>
+  
